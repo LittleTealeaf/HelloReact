@@ -1,5 +1,6 @@
 {
   "name": "helloreact",
+  "homepage": "https://littletealeaf.github.io/HelloReact",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

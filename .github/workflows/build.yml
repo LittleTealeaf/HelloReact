@@ -20,3 +20,9 @@ jobs:
       name: Clean Install Dependencies
     - run: npm run build
       name: Build
+    - name: Publish to Github Pages
+      uses: peaceiris/actions-gh-pages@v3
+      if: github.ref == 'refs/head/main'
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: './build/'

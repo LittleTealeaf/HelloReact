@@ -1,0 +1,21 @@
+name: Build 
+
+on:
+  push:
+  schedule:
+  - cron: '0 0 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        name: Checkout Repository
+      - name: Use Node.js 17
+        uses: actions/setup-node@v2
+        with:
+          node-version: 17.x
+      - name: Install Dependencies
+        run: npm ci
+      - name: Build App
+        run: npm run build
